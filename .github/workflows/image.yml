@@ -17,8 +17,10 @@ jobs:
           version: latest
       - name: login to docker hub
         run: echo "${{ secrets.DOCKER_PWD }}" | docker login -u "${{ secrets.DOCKER_LGN }}" --password-stdin
+      - name: path
+        run: ls
       - name: build the image
         run: |
           docker buildx build --push \
-            --tag piwi3910/hello-multiarch:latest \
+            --tag edatibet/multiarch:latest \
             --platform linux/amd64,linux/arm64/v8 .
