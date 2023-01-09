@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine3.12 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine3.17 AS build
 WORKDIR /src
 COPY ["MultiArch/MultiArch.csproj", "MultiArch/"]
 RUN dotnet restore "MultiArch/MultiArch.csproj"
